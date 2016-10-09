@@ -26,11 +26,19 @@ public class newNoteActivity extends AppCompatActivity {
         String title  = findViewById(R.id.textView).toString();
         String dateTime = findViewById(R.id.textView2).toString();
         SQLiteDatabase db = openOrCreateDatabase("notes",MODE_PRIVATE,null);
-
+        /*
+         * I had to do this at some context, so delete it once errors are corrected
+         */
         String sqlStr = "DROP TABLE IF EXISTS `allNotes`";
         db.execSQL(sqlStr);
+        /*
+         * I wanted the db table to have a PK with auto increment so that we can modify each row with ease
+         * so try to make id as INT PRIMARY_KEY AUTO_INCREMENT, it was showing some error for me
+         * And if AUTO INCREMENT works no need to insert the id manually
+         */
         sqlStr = "CREATE TABLE IF NOT EXISTS `allNotes` ( `id` INT,"+
                 "noteName VARCHAR(20) NOT NULL ,content TEXT NOT NULL , `createdOn` VARCHAR(20) NOT NULL );";
+
         db.execSQL(sqlStr);
         ContentValues cv = new ContentValues();
         cv.put("noteName",title);

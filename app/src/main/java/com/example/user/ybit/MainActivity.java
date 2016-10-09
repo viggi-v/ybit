@@ -29,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         showDBresults();
     }
+    /*
+     * Prints the data simply as a string, to check if insertion is proper.
+     * if no output is obtained also verify if the text is visible..
+     * I tried logging the result but no use :(
+     */
     public void showDBresults(){
         SQLiteDatabase db = openOrCreateDatabase("notes",MODE_PRIVATE,null);
         String sqlStr = "CREATE TABLE IF NOT EXISTS `allNotes` ( `id` INT ,"+
