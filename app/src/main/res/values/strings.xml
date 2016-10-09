@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">yBit</string>
+    <string name="title_activity_new_note">newNoteActivity</string>
+</resources>
