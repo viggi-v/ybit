@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -32,9 +33,6 @@ public class newNoteActivity extends AppCompatActivity {
                SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm");
                 String dateTime = df.format(c.getTime());
 
-                /*Date date = new Date();
-                java.text.DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getApplicationContext());
-                String date1 = dateFormat.format(date);*/
                 textView.setText(dateTime);
                 mode = 1;
             }
@@ -47,6 +45,7 @@ public class newNoteActivity extends AppCompatActivity {
                 db.execSQL(sqlStr);
                 String sqlStr2 ="SELECT * FROM allNotes WHERE id=" + id + ";";
 
+
                 Cursor c = db.rawQuery(sqlStr2, null);
                 c.moveToFirst();
                 String title = c.getString(1);
@@ -54,7 +53,7 @@ public class newNoteActivity extends AppCompatActivity {
                 String date = c.getString(3);
                 et1.setText(noteContent);
                 et2.setText(title);
-                textView.setText("Last updated on " + date);
+                textView.setText("Last updated on "+date);
                 }
         }
 
@@ -67,11 +66,8 @@ public class newNoteActivity extends AppCompatActivity {
 
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm");
-        String dateTime = df.format(c.getTime());
 
-       /* Date date = new Date();
-        java.text.DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getApplicationContext());
-        String date1 = dateFormat.format(date);*/
+        String dateTime = df.format(c.getTime());
 
         SQLiteDatabase db = openOrCreateDatabase("notes",MODE_PRIVATE,null);
         String sqlStr = "CREATE TABLE IF NOT EXISTS `allNotes` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT,"+

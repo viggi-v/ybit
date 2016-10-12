@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                             .setNegativeButton("No",null)
                             .create();
                     adb.show();
-                    return false;
+                    return true;
                 }
             });
             int pos=0;
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             ArrayAdapter<String> ad1 = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,ar);
             lv.setAdapter(ad1);
 
-            Toast.makeText(MainActivity.this,"No Note Made", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"No Notes Present!", Toast.LENGTH_SHORT).show();
         }
 
     }
