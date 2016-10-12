@@ -48,6 +48,7 @@
         android:layout_height="wrap_content"
         android:text="Clear All Notes"
         android:id="@+id/button"
+        android:backgroundTint="@color/buttonPink"
         android:layout_alignBottom="@+id/include"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
