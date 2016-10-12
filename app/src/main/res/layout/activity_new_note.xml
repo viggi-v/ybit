@@ -18,13 +18,23 @@
             android:backgroundTint="@color/noteYellow"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <TextView
-                android:text="Title"
+            <EditText
+                android:text="TITLE"
                 android:textColor="@color/black"
-                android:textSize="48dp"
+                android:textSize="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView" />
+                android:id="@+id/editText"
+                android:layout_gravity="left|top" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:textColor="@color/colorAccent"
+                android:ems="10"
+                android:id="@+id/editText2" />
 
             <TextView
                 android:text="DateTime"
@@ -34,12 +44,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2" />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/editText2" />
         </android.support.design.widget.AppBarLayout>
 
 
